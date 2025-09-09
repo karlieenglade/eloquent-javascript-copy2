@@ -26,8 +26,21 @@ LOGS =>
 
 */
 
-function triangles() {
-  
+function triangles(x) {
+  //while i <= x, print "#". 
+  //starting with 1 "#"
+  var i = 1;
+  //variable to add to each time and print
+  var hash = "";
+  //while i <= input x
+  while (i <= x){
+    //add a # to hash each time
+    hash += "#"
+    //print hash each time
+    console.log(hash);
+    //keep going until i > x
+    i++;
+  }
 }
 
 
@@ -48,7 +61,32 @@ on the number:
 */
 
 function fizzBuzz(start, end) {
+  // start, end are numbers
+  //div by 3 log "fizz"
+  //div by 5 log "buzz"
+  //div by 3 and 5 log "fizzbuzz"
+  //else log the number
+  // for loop from start to end
+  for (var i = start; i <= end; i++){
+    //if divisible by 3 and 5
+    if (i % 3 === 0 && i % 5 === 0){
+      //print fizzbuzz
+      console.log("fizzbuzz");
+      //else if div by 3
+    } else if (i % 3 === 0){
+      //print fizz
+      console.log("fizz");
+      //else if div by 5
+    } else if (i % 5 === 0){
+      //print fizzbuzz
+      console.log("buzz");
+      //else print the number
+    } else {
+      console.log(i);
+    }
+  }
   
+
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -82,9 +120,33 @@ LOGS =>
 */
 
 function drawChessboard(x) {
-
-
-}
+  //one line is " # " and next is "#  #" ... for example
+  //input number is the length of each line AND the number of lines
+  
+  //loop from 0 to input num x
+  //variable for each line 
+  var line = "";
+    //line access
+  for (var i = 0; i < x; i++){
+    //character access. looping over the same line as abone
+    for (var c = 0; c < x; c++){
+      //line index + char index (two consecutive line indexes) is even
+      if ((i + c) % 2 === 0){
+        // then a space is added to line
+        line += " "; //so very first char is a space bc 0+0 is even (good)
+        //else if 2 consec indexes added together is odd
+      } else {
+        //then # is added to line
+        line += "#"; //now need to add line break after each
+      }
+    }
+    /*adding line break outside of nested loop and in outer loop 
+      since we need line break after each line, which is what the outer 
+      loop was initially created for */
+    line += "\n";
+  }
+  console.log(line); 
+  }
 
 ////////////////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
